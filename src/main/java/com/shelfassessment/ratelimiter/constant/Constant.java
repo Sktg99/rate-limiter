@@ -7,8 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Constant {
-    public static final int USER_GLOBAL_RATE_LIMIT = 2;
-    public static final int USER_API_RATE_LIMIT = 1;
+    public static final int USER_GLOBAL_RATE_LIMIT = 5;
+    public static final int USER_API_RATE_LIMIT = 4;
     public static Map<BucketType, Integer> apiRateLimitMapping;
     public static Map<BucketType, Duration> apiRateLimitDurationMapping;
     public static Map<BucketType, Integer> apiTokenUsageMapping;
@@ -20,8 +20,8 @@ public class Constant {
         apiRateLimitMapping = apiRateLimitMap;
 
         Map<BucketType, Duration> apiRateLimitDurationMap = new HashMap<>();
-        apiRateLimitDurationMap.put(BucketType.USER_GLOBAL, Duration.ofMinutes(2));
-        apiRateLimitDurationMap.put(BucketType.USER_API, Duration.ofMinutes(2));
+        apiRateLimitDurationMap.put(BucketType.USER_GLOBAL, Duration.ofMinutes(1));
+        apiRateLimitDurationMap.put(BucketType.USER_API, Duration.ofMinutes(1));
         apiRateLimitDurationMapping = apiRateLimitDurationMap;
 
         Map<BucketType, Integer> apiTokenUsageMap = new HashMap<>();
